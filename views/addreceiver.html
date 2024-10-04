@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="viho admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+  <meta name="keywords"
+    content="admin template, viho admin template, dashboard template, flat admin template, responsive admin template, web app">
+  <meta name="author" content="pixelstrap">
+  <link rel="icon" href="/static/images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/static/images/favicon.png" type="image/x-icon">
+  <title>viho - Premium Admin Template</title>
+  <!-- Google font-->
+  <link rel="preconnect" href="https://fonts.g/static.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome-->
+  <link rel="stylesheet" type="text/css" href="/static/css/fontawesome.css">
+  <!-- ico-font-->
+  <link rel="stylesheet" type="text/css" href="/static/css/icofont.css">
+  <!-- Themify icon-->
+  <link rel="stylesheet" type="text/css" href="/static/css/themify.css">
+  <!-- Flag icon-->
+  <link rel="stylesheet" type="text/css" href="/static/css/flag-icon.css">
+  <!-- Feather icon-->
+  <link rel="stylesheet" type="text/css" href="/static/css/feather-icon.css">
+  <!-- Plugins css start-->
+  <!-- Plugins css Ends-->
+  <!-- Bootstrap css-->
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+  <!-- App css-->
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  <link id="color" rel="stylesheet" href="/static/css/color-1.css" media="screen">
+  <!-- Responsive css-->
+  <link rel="stylesheet" type="text/css" href="/static/css/responsive.css">
+</head>
+
+<body>
+  <!-- Loader starts-->
+  <div class="loader-wrapper">
+    <div class="theme-loader">
+      <div class="loader-p"></div>
+    </div>
+  </div>
+  <!-- Loader ends-->
+  <!-- page-wrapper Start-->
+  <div class="page-wrapper" id="pageWrapper">
+    <!-- Page Header Start-->
+    <div class="page-main-header">
+      <div class="main-header-right row m-0">
+        <div class="main-header-left">
+          <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" src="/static/images/logo/logo.png"
+                alt=""></a></div>
+          <div class="dark-logo-wrapper"><a href="index.html"><img class="img-fluid"
+                src="/static/images/logo/dark-logo.png" alt=""></a></div>
+          <div class="toggle-sidebar"><i class="status_toggle middle" data-feather="align-center"
+              id="sidebar-toggle"></i></div>
+        </div>
+        <div class="left-menu-header col">
+          <ul>
+            <li>
+
+            </li>
+          </ul>
+        </div>
+        <div class="nav-right col pull-right right-menu p-0">
+          <ul class="nav-menus">
+
+
+
+
+
+
+
+            <li class="onhover-dropdown p-0">
+              <button class="btn btn-primary-light" type="button"><a href="/admin/logout"><i
+                    data-feather="log-out"></i>Log out</a></button>
+            </li>
+          </ul>
+        </div>
+        <div class="d-lg-none mobile-toggle pull-right w-auto"><i data-feather="more-horizontal"></i></div>
+      </div>
+    </div>
+    <!-- Page Header Ends                              -->
+    <!-- Page Body Start-->
+    <div class="page-body-wrapper horizontal-menu">
+      <!-- Page Sidebar Start-->
+      <header class="main-nav">
+
+        <nav>
+          <div class="main-navbar">
+            <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+            <div id="mainnav">
+              <ul class="nav-menu custom-scrollbar">
+
+                <li class="sidebar-main-title">
+                  <div>
+                    <h6>Admin Panel</h6>
+                  </div>
+                </li>
+                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
+                      data-feather="home"></i><span>Senders</span></a>
+                  <ul class="nav-submenu menu-content">
+                    <li><a href="/admin/addsender">Add Sender</a></li>
+
+                  </ul>
+                </li>
+                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
+                      data-feather="airplay"></i><span>Receiver</span></a>
+                  <ul class="nav-submenu menu-content">
+                    <li><a href="/admin/addreceiver">Add Receiver</a></li>
+                  </ul>
+                </li>
+
+                
+
+                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
+                      data-feather="airplay"></i><span>Payments</span></a>
+                  <ul class="nav-submenu menu-content">
+                    <li><a href="/admin/makepayment">Make Payments</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
+                  data-feather="airplay"></i><span>Tour Categories</span></a>
+              <ul class="nav-submenu menu-content">
+                <li><a href="/admin/addcategory">Add Category</a></li>
+              </ul>
+            </li>
+
+              </ul>
+            </div>
+            <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+          </div>
+        </nav>
+      </header>
+      <!-- Page Sidebar Ends-->
+      <div class="page-body">
+        <div class="container-fluid">
+          <div class="page-header">
+            <div class="row">
+              <div class="col-sm-6">
+                <h3>Receiver</h3>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item">Receiver </li>
+                  <li class="breadcrumb-item active">Add Receiver</li>
+                </ol>
+              </div>
+              <div class="col-sm-6">
+                <!-- Bookmark Start-->
+
+                <!-- Bookmark Ends-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Container-fluid starts-->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+
+              <div class="card">
+                <div class="card-header pb-0">
+                  <h5>Add Receiver</h5>
+                </div>
+                <div class="card-body">
+                  <form class="theme-form" id="tourform" enctype="multipart/form-data">
+
+                    <div class="d-flex flex-column gap-2">
+
+
+                      <div class="row g-3">
+
+
+
+                        <div class="col-md-6">
+                          <label class="form-label" for="validationCustom01">Receiver Name</label>
+                          <input class="form-control" id="receivername" name="receivername" type="text"
+                            placeholder="Highlights Of Japan" required="">
+                        </div>
+
+                        <div class="col-md-6">
+                          <label class="form-label" for="validationCustom04">Receiver Bank Name</label>
+                          <input class="form-control" list="banks" id="receiverbankname" name="receiverbankname" placeholder="Choose a bank..." required>
+                          <datalist id="banks">
+                            <option value="Everest Bank Limited">
+                            <option value="Machhapuchchhre Bank Limited">
+                            <option value="Kumari Bank Ltd.">
+                            <option value="Siddhartha Bank Limited">
+                            <option value="Global IME Bank Limited">
+                            <option value="Citizens Bank International Limited">
+                            <option value="Prime Commercial Bank Limited">
+                            <option value="Laxmi Sunrise Bank Limited">
+                            <option value="NIC Asia Bank Limited">
+                            <option value="NMB Bank Limited">
+                            <option value="Prabhu Bank Limited">
+                            <option value="Janata Bank Nepal Limited">
+                            <option value="NIDC Development Bank Limited">
+                            <option value="Sanima Bank Ltd.">
+                            <option value="Deva Bikas Bank Limited">
+                            <option value="Lumbini Bikas Bank Ltd">
+                            <option value="Saptakoshi Development Bank Ltd.">
+                            <option value="Jyoti Bikash Bank Ltd">
+                            <option value="Tourism Development Bank Limited">
+                            <option value="Sindhu Bikash Bank Ltd.">
+                            <option value="Garima Bikas Bank Limited">
+                            <option value="Om Development Bank Limited">
+                            <option value="Kamana Sewa Bikas Bank Ltd.">
+                            <option value="Gandaki Bikas Bank Ltd">
+                            <option value="Muktinath Bikas Bank Limited">
+                            <option value="Shangrila Development Bank Limited">
+                            <option value="Tinau Bikas Bank Limited">
+                            <option value="Excel Development Bank Ltd.">
+                            <option value="Sahayogi Bikash Bank Ltd">
+                            <option value="Miteri Development Bank Limited">
+                            <option value="Kabeli Bikas Bank Ltd">
+                            <option value="Hamro Bikas Bank Limited">
+                            <option value="Kankai Bikas Bank Ltd">
+                            <option value="Nepal Community Development Bank Ltd">
+                            <option value="Kailash Bikas Bank Ltd.">
+                            <option value="Shine Resunga Development Bank Ltd.">
+                            <option value="Srijana Finance Limited">
+                            <option value="Gurkhas Finance Limited">
+                            <option value="Bhargav Bikas Bank Limited">
+                            <option value="Goodwill Finance Limited">
+                            <option value="Shree Investment & Finance Co. Ltd.">
+                            <option value="United Finance Ltd.">
+                            <option value="Progressive Finance Co. Ltd.">
+                            <option value="Synergy Finance Ltd.">
+                            <option value="Pokhara Finance Ltd.">
+                            <option value="Central Finance Ltd">
+                            <option value="Purnima Bikas Bank Limited">
+                            <option value="Guheshwori Merchant Banking and Finance Limited">
+                            <option value="ICFC Finance Limited">
+                            <option value="Mahalaxmi Bikas Bank Ltd.">
+                            <option value="Manjushree Finance Limited">
+                            <option value="Mission Development Bank Limited">
+                            <option value="Jebils Finance Ltd">
+                            <option value="Reliance Finance Ltd.">
+                            <option value="Kanchan Development Bank Ltd">
+                            <option value="Test Bank Add">
+                            <option value="TEST - BANK">
+                            <option value="Standard Chartered Bank Nepal Limited">
+                            <option value="Nabil Bank Ltd.">
+                            <option value="Rastriya Banijya Bank Limited">
+                            <option value="Nepal Rastra Bank">
+                            <option value="Nepal SBI Bank Limited">
+                            <option value="Nepal Investment Mega Bank Limited">
+                            <option value="Agriculture Development Bank Ltd">
+                            <option value="Nepal Bank Limited">
+                            <option value="Himalayan Bank Limited">
+                        </datalist>
+                        </div>
+
+                      </div>
+
+                      <div class="row g-3">
+                        <div class="col-md-6 mb-6">
+                          <label class="form-label" for="validationCustomUsername">Receiver Account Number</label>
+                          <div class="input-group"><span class="" id="inputGroupPrepend"></span>
+                            <input class="form-control" id="receiveracno" name="receiveracno" type="text"
+                              placeholder="Tokyo" aria-describedby="inputGroupPrepend" required="">
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+
+                      <button class="btn btn-primary" type="submit">Add Receiver</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Container-fluid Ends-->
+
+  <!-- footer start-->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 footer-copyright">
+          <p class="mb-0">Copyright 2021-22 © viho All rights reserved.</p>
+        </div>
+        <div class="col-md-6">
+          <p class="pull-right mb-0">Hand crafted & made with <i class="fa fa-heart font-secondary"></i></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  <script>
+
+    let addtoursubmit = document.getElementById("tourform");
+
+    addtoursubmit.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      console.log("submit button clicked")
+      var bodyFormData = {}
+
+      const receivername = document.getElementById("receivername").value
+      const receiverbankname = document.getElementById("receiverbankname").value
+      const receiveracno = document.getElementById("receiveracno").value
+
+
+
+      bodyFormData = {
+        "receivername": receivername,
+        "receiverbankname": receiverbankname,
+        "receiveracno": receiveracno,
+
+      }
+
+
+
+
+
+
+
+      axios.post('/addreceiverapi', bodyFormData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(function (response) {
+          if (response.status === 200) {
+            alert('Sender Added Successfully ');
+            console.log(response)
+          }
+          else {
+            alert('FAILED', response.data.message);
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+          alert('FAILED');
+        });
+
+    })
+
+  </script>
+  <!-- latest jquery-->
+  <script src="/static/js/jquery-3.5.1.min.js"></script>
+  <!-- feather icon js-->
+  <script src="/static/js/icons/feather-icon/feather.min.js"></script>
+  <script src="/static/js/icons/feather-icon/feather-icon.js"></script>
+  <!-- Sidebar jquery-->
+  <script src="/static/js/sidebar-menu.js"></script>
+  <script src="/static/js/config.js"></script>
+  <!-- Bootstrap js-->
+  <script src="/static/js/bootstrap/popper.min.js"></script>
+  <script src="/static/js/bootstrap/bootstrap.min.js"></script>
+  <!-- Plugins JS start-->
+  <script src="/static/js/form-validation-custom.js"></script>
+  <!-- Plugins JS Ends-->
+  <!-- Theme js-->
+  <script src="/static/js/script.js"></script>
+  <script src="/static/js/theme-customizer/customizer.js"></script>
+  <!-- login js-->
+  <!-- Plugin used-->
+</body>
+
+</html>
