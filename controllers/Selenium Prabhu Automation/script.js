@@ -98,7 +98,7 @@ async function autotransact(receivernameog, receiverbanknameog, receiveracnoog, 
         let retries = 20; // Retry up to 3 times
         while (retries > 0) {
             try {
-                confirmbutton = await driver.wait(until.elementLocated(By.xpath(confirmButtonXPath)), 10000);
+                confirmbutton = await driver.wait(until.elementLocated(By.xpath(confirmButtonXPath)), 100000);
                 await driver.wait(until.elementIsVisible(confirmbutton), 10000);
                 await driver.wait(until.elementIsEnabled(confirmbutton), 10000);
 
@@ -139,10 +139,10 @@ async function autotransact(receivernameog, receiverbanknameog, receiveracnoog, 
         }
 
 
-        let servicesretries = 5; // Retry up to 3 times
+        let servicesretries = 200; // Retry up to 3 times
         while (servicesretries > 0) {
             try {
-                servicesbtn = await driver.wait(until.elementLocated(By.xpath(`/html/body/div[1]/div/aside/div[1]/div[1]/div/div/div/ul/li[4]/a`)), 10000);
+                servicesbtn = await driver.wait(until.elementLocated(By.xpath(`/html/body/div[1]/div/aside/div[1]/div[1]/div/div/div/ul/li[4]/a`)), 100000);
                 await driver.wait(until.elementIsVisible(servicesbtn), 10000);
                 await driver.wait(until.elementIsEnabled(servicesbtn), 10000);
 
@@ -194,7 +194,7 @@ async function autotransact(receivernameog, receiverbanknameog, receiveracnoog, 
 
 
             await driver.sleep(500);
-        let showretries = 5; // Retry up to 3 times
+        let showretries = 5; // Retry up to 5 times
         while (showretries > 0) {
             try {
                 showbutton = await driver.wait(until.elementLocated(By.xpath(`/html/body/div[1]/div/main/section/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/div[1]/div/div[2]/form/div[3]/button`)), 10000);

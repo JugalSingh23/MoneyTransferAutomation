@@ -432,12 +432,12 @@
           if (response.status === 200) {
       
             alert(response.data.message);
-          } else {
-            alert('FAILED', response.data.message);
-          }
+          } 
+         
         })
         .catch(function (error) {
-          console.log(error);
+          console.log(`There was an error`);
+          console.log(error)
           alert('FAILED');
         });
     });

@@ -176,7 +176,7 @@ async function findotp() {
 
 
         const startTime = Date.now();
-        const maxTime = 50000;
+        const maxTime = 300000;
 
         
 

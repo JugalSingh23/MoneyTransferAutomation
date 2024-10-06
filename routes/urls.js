@@ -45,7 +45,7 @@ const upload = multer({ storage });
 router.get('/admin/addsender',AddSenderAdmin)
 router.get('/admin/addreceiver',AddReceiverAdmin)
 router.get('/admin/makepayment',MakePaymentAdmin)
-router.get('/prabhureceipttemp',prabhureceipt)
+// router.get('/prabhureceipttemp',prabhureceipt)
 
 //APIs
 router.post('/addsenderapi',AddSenderAPI)

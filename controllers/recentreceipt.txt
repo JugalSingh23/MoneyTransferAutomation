@@ -1,18 +1,20 @@
         *TRANSACTION RECEIPT*
 
-```Reference Code : undefined```
+```Reference Code : 169712```
 
-```Date Time : Fri Oct 04 2024 14:23:56 GMT+0530 (India Standard Time)```
+```Date Time : Sun Oct 06 2024 17:02:43 GMT+0530 (India Standard Time)```
 
-```From : Jugal```
+```Sender Name : Tulia```
 
-```To Account : 0230100000431041```
+```Sender Mobile No. : 9923152596```
 
-```To Account Holder Name : Mohan Lwar```
+```Receiver Account No.: 0230100000431041```
 
-```Bank Name : Citizens Bank International Limited```
+```Receiver Name : Mohan Lwar```
 
-```Amount : 50```
+```Receiver Bank Name : Citizens Bank International Limited```
+
+```Amount (NPR): 100```
 
 ```Status : TRANSACTION COMPLETED```
 

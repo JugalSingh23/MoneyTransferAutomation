@@ -26,8 +26,46 @@ export const MakePaymentAdmin = async (req, res) => {
     }
 }
 
+
+
+
+
+let clientInitialized = false;
+let client;
+
+const initClient = async () => {
+    if (!clientInitialized) {
+        client = new Client({
+            puppeteer: { args: ['--no-sandbox', '--disable-setuid-sandbox'] },
+            authStrategy: new LocalAuth(),
+        });
+
+        client.on('qr', (qr) => {
+            console.log('QR RECEIVED', qr);
+            qrcode.generate(qr, { small: true });
+        });
+
+        client.on('error', (error) => {
+            console.error('Client error:', error);
+        });
+
+        client.on('ready', () => {
+            console.log('Client is ready!');
+            clientInitialized = true; // Mark client as initialized
+        });
+
+        await client.initialize();
+        console.log('Client initialized');
+    }
+};
+
+await initClient(); // Ensure the client is initialized
 export const MakePaymentAPI = async (req, res) => {
     try {
+        if (!clientInitialized) {
+            return res.status(400).json({ message: 'Whatsapp Client is not ready wait a few seconds...' });
+        }
+
         console.log(`hiii`, req.body)
         const receivername = req.body.receivername.split("- ")
         const sendername = req.body.sendername.split("- ")
@@ -39,14 +77,15 @@ export const MakePaymentAPI = async (req, res) => {
         const receiptstring = "        *TRANSACTION RECEIPT*" + "\n\n" +
      "```Reference Code : " + refcode + "```" + "\n\n" +
     "```Date Time : " + currentDate.toString() + "```" + "\n\n" +
-    "```From : " + sendername[1] + "```" + "\n\n" +
-    "```To Account : " + req.body.receiveracno + "```" + "\n\n" +
-    "```To Account Holder Name : " + receivername[1] + "```" + "\n\n" +
-    "```Bank Name : " + req.body.receiverbankname + "```" + "\n\n" +
-    "```Amount : " + req.body.amount + "```" + "\n\n" +
+    "```Sender Name : " + sendername[1] + "```" + "\n\n" +
+    "```Sender Mobile No. : " + req.body.sendernumber + "```" + "\n\n" +
+    "```Receiver Account No.: " + req.body.receiveracno + "```" + "\n\n" +
+    "```Receiver Name : " + receivername[1] + "```" + "\n\n" +
+    "```Receiver Bank Name : " + req.body.receiverbankname + "```" + "\n\n" +
+    "```Amount (NPR): " + req.body.amount + "```" + "\n\n" +
     "```Status : TRANSACTION COMPLETED```" + "\n\n" +
     "```IPS Status : TRANSACTION COMPLETED```";
-        const string = "Transaction Receipt"+"\n\n"+"Reference Code : "+refcode+"\n\n"+"Date Time : "+currentDate.toString()+"\n\n"+"From : "+sendername[1]+"\n\n"+"To Account : "+req.body.receiveracno+"\n\n"+"To Account Holder name : "+receivername[1]+"\n\n"+"Bank Name : "+req.body.receiverbankname+"\n\n"+"Amount : "+req.body.amount+"\n\n"+"Status : TRANSACTION COMPLETED"+"\n\n"+"IPS Status : TRANSACTION COMPLETED"
+        // const string = "Transaction Receipt"+"\n\n"+"Reference Code : "+refcode+"\n\n"+"Date Time : "+currentDate.toString()+"\n\n"+"From : "+sendername[1]+"\n\n"+"To Account : "+req.body.receiveracno+"\n\n"+"To Account Holder name : "+receivername[1]+"\n\n"+"Bank Name : "+req.body.receiverbankname+"\n\n"+"Amount : "+req.body.amount+"\n\n"+"Status : TRANSACTION COMPLETED"+"\n\n"+"IPS Status : TRANSACTION COMPLETED"
         
         
 
@@ -61,46 +100,32 @@ export const MakePaymentAPI = async (req, res) => {
         const receiptfilepath = path.join(__dirname, 'recentreceipt.txt');
         await fs.writeFile(receiptfilepath, receiptstring, 'utf8');
 
-        const client = new Client({
-            puppeteer: {
-                args: ['--no-sandbox', '--disable-setuid-sandbox'],
-            },
-            authStrategy: new LocalAuth()
-        });
+        
 
+      
 
-        client.once('ready', async () => {
-            console.log('Client is ready!');
-            const number = `91${req.body.sendernumber}@c.us`;
-            const message = await fs.readFile(receiptfilepath, 'utf-8')
-            client.sendMessage(number, message).then(response => {
+        
+
+        const number = `91${req.body.sendernumber}@c.us`;
+        const message = await fs.readFile(receiptfilepath, 'utf-8');
+
+        client.sendMessage(number, message)
+            .then(response => {
                 console.log('Message sent:', response);
-            }).catch(err => {
+                return res.status(200).json({ message: 'Transaction Completed & Receipt Sent' });
+            })
+            .catch(err => {
                 console.error('Error when sending message:', err);
+                return res.status(400).json({ message: 'Error while sending message' });
             });
-
-        });
-
-
-        client.on('qr', (qr) => {
-            console.log('QR RECEIVED', qr);
-            qrcode.generate(qr, { small: true });
-        });
-
-        // Start your client
-        client.initialize();
-
-        console.log(`client initialized`)
-
-
-        return res.status(200).json({ message: 'Transaction Completed & Receipt Sent' })
+       
 
 
     }
 
     catch (error) {
         console.log(error)
-        return res.status(400).json({ message: 'Error while adding sender' })
+        return res.status(400).json({ message: 'Error During payment' })
 
 
     }
